@@ -7,6 +7,7 @@ sudo mkfs -t xfs /dev/xvdh
 # creación carpeta
 sudo mkdir -p /usr/share/nginx/html
 # montaje
+#sudo sh -c 'echo UUID=`lsblk -no UUID /dev/xvdh` /usr/share/nginx/html xfs defaults,nofail 0 2 >> /etc/fstab'
 echo "/dev/xvdh  /usr/share/nginx/html  xfs  defaults,nofail  0  2" | sudo tee -a /etc/fstab
 sudo mount /dev/xvdh /usr/share/nginx/html
 
